@@ -1,0 +1,4 @@
+heuristic,average_nodes_expanded,average_execution_time,average_path_length,success_rate
+Chebyshev,151.23,0.000177,23.08,96.0
+Euclidean,127.83,0.000161,23.08,96.0
+Manhattan,94.66,0.00012,23.08,96.0

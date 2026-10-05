@@ -1,0 +1,14 @@
+rows,20,cols,20,robots,6
+metric,Plain A*,DPTA*
+Robots reaching goal,6/6,6/6
+Avg path length,29.17,19.50
+Avg arrival time,29.67,21.33
+Makespan (ticks),57,27
+Predicted conflicts,8,0
+Vertex conflicts,6,0
+Edge conflicts,3,0
+Re-plans,9,0
+Nodes expanded,861,1169
+Planning time (ms),1.91,7.93
+Total run time (ms),3.28,8.36
+Deadlock,no,no
