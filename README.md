@@ -3,6 +3,8 @@
 **A\* heuristic comparison and a multi-robot planner (DPTA\*)**
 
 Minor project for **CSMI17 – Artificial Intelligence**
+Department of Electronics and Communication Engineering, National Institute of Technology, Tiruchirappalli – 620 015
+Faculty: **Dr. Usha K Ruthika**
 
 | Name | Roll No. |
 | --- | --- |
@@ -224,14 +226,21 @@ Run the scripts from inside the problem folder, since they import each other loc
 
 ### Problem 1: Single robot (`PS1/`)
 
-> The `PS1` filenames below are placeholders. Replace them with your actual filenames.
-
 ```bash
 cd PS1
-python3 main.py            # Pygame simulator: pick heuristic, grid size, obstacle %
-python3 benchmark.py       # 100 random trials -> CSV
-python3 plot_results.py    # averages the CSV and draws the graphs
+python3 main.py        # Pygame simulator: pick heuristic, grid size, obstacle %
+python3 exp.py         # runs the 100 random trials -> results.csv
+python3 analysis.py    # averages results.csv -> summary.csv
+python3 plots.py       # draws the comparison graphs
 ```
+
+The plots are saved as:
+
+| File | Shows |
+| --- | --- |
+| `average_nodes_expansion.png` | Average nodes expanded per heuristic |
+| `average_execution_time.png` | Average execution time per heuristic |
+| `average_path_length.png` | Average path length per heuristic |
 
 ### Problem 2: Multiple robots (`PS2/`)
 
@@ -258,7 +267,18 @@ The plots are saved as:
 ```
 .
 ├── PS1/                              # Problem 1: single robot, 3 heuristics
-│   └── ...                           # (add your files here)
+│   ├── grid.py                       # random grid, start and goal generation
+│   ├── astar.py                      # A* with Manhattan / Euclidean / Chebyshev heuristics
+│   ├── main.py                       # Pygame simulator (entry point)
+│   ├── exp.py                        # runs the 100-trial experiment
+│   ├── results.py                    # collects per-trial metrics and writes results.csv
+│   ├── results.csv                   # raw results, one row per run
+│   ├── analysis.py                   # averages the raw results
+│   ├── summary.csv                   # averaged results per heuristic
+│   ├── plots.py                      # draws the comparison graphs
+│   ├── average_nodes_expansion.png
+│   ├── average_execution_time.png
+│   └── average_path_length.png
 ├── PS2/                              # Problem 2: multi-robot path finding
 │   ├── astar.py                      # A* search (plain A*, baseline)
 │   ├── cooperative_astar.py          # DPTA*: time-aware, reservation-table planner
